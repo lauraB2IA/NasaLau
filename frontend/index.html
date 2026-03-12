@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APOD - Seu Aniversário no Espaço</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+    </div>
+    
+    <main class="container">
+        <header class="header">
+            <h1>Descubra o Cosmos</h1>
+            <p>O que a NASA viu no dia do seu aniversário?</p>
+        </header>
+
+        <section class="card form-card">
+            <form id="apodForm">
+                <div class="input-group">
+                    <label for="birthdate">Insira sua data de aniversário:</label>
+                    <input type="date" id="birthdate" name="birthdate" min="1995-06-16" required>
+                    <small>A NASA começou a registrar imagens em 16/06/1995.</small>
+                </div>
+                <button type="submit" class="btn-glow">Explorar</button>
+            </form>
+        </section>
+
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+            <p>Viajando pelo espaço-tempo...</p>
+        </div>
+
+        <section id="result" class="card result-card hidden">
+            <h2 id="apodTitle"></h2>
+            <div class="media-container" id="mediaContainer">
+                <!-- Image or Video will be injected here -->
+            </div>
+            <div class="description-container">
+                <p id="apodDate" class="date-badge"></p>
+                <p id="apodDescription"></p>
+            </div>
+            <p id="copyright" class="copyright"></p>
+        </section>
+        
+        <div id="errorMessage" class="error hidden">
+            <p id="errorText"></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
